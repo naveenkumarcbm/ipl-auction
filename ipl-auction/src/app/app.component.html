@@ -1,0 +1,64 @@
+<div class="jumbotron main">
+  <header>
+    <h1>{{title}}</h1>
+  </header>
+  <section class="jumbotron">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Availabel players : {{avialablePalyers.length}}</div>
+          <div class="panel-body" (drop)="drop($event)" (dragover)="allowDrop($event)">
+            <div  draggable="true" (dragstart)="drag(i,'from')" *ngFor="let player of avialablePalyers; let i = index;">
+              <player-details [player]="player"></player-details>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Selected players : {{selectedPalyers.length}}</div>
+          <div class="panel-body" (drop)="drop($event)" (dragover)="allowDrop($event)">
+            <div draggable="true" (dragstart)="drag(i,'to')" *ngFor="let player of selectedPalyers; let i = index;" >
+              <player-details [player]="player"></player-details>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Team details</div>
+              <div class="panel-body">
+                <label for="budget">Total Budget : </label><b>{{budget | currency:'':''}}</b>
+                <br>
+                <label for="used">Used : </label><b>{{used | currency:'':''}}</b>
+                <br>
+                <label for="budget">Available : </label><b>{{available   | currency:'':''}}</b>
+                <br>
+                <br>
+                <br>
+                <span *ngIf="selectedPalyers.length !=0">
+                  <label for="budget">Team Strength : </label><b [ngStyle]="{'color': expression}">{{strength}}</b>
+                </span>
+              </div>
+            </div>
+      </div>
+    </div>
+    <!-- Warning message -->
+    <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Warning</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="warnModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{warnMsg}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="warnModal.hide()">Close</button>
+        </div>
+      </ng-template>
+  </section>
+  <footer>
+  </footer>
+</div>
