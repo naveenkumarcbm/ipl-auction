@@ -119,10 +119,11 @@ export class AppComponent implements OnInit{
    **/
   validateSelection(){
     let totValue = 0;
+    let valid = true;
     if(this.selectedPalyers.length == 15){
       this.warnMsg =this.plyMsg;
       this.warnModal = this.bsService.show(this.modalRef);
-      return false;
+      valid = false;
     }
     this.selectedPalyers.forEach(val =>{
       totValue = totValue + val.price;
@@ -130,8 +131,8 @@ export class AppComponent implements OnInit{
     if(this.budget - totValue < 0){
       this.warnMsg =this.budgetMsg;
       this.warnModal = this.bsService.show(this.modalRef);
-      return false;
+      valid = false;
     }
-    return true;
+    return valid;
   }
 }
