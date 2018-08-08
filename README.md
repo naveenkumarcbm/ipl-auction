@@ -3,7 +3,7 @@
 
 #     Description:
 
-    A simple Angular(v6.0) based application, which allows to select the players from the available list. Users can drag
+    A simple Angular (v6.0) based application, which allows to select the players from the available list. Users can drag
     the players card from the available list to the selected list.
 
     1'st Section holds the available list of players
@@ -11,7 +11,7 @@
     3'rd Section holds the details such as
             *  Total Budget
             *  Used amount
-            *  Available ammount
+            *  Available amount
 
 #    Player detail
         Each player object will have the Player Name, Batting Rank, Bowling Rank and All Rounder Rank properties
@@ -36,7 +36,7 @@
         * RxJS v6.0
 
 #    Installation:
-        Using Angular CLI we can serve the application locally Using
+        Using Angular CLI we can serve the application locally using
             - install nodeJS (v9.0+)
             - npm install (downloads node_modules packages)
             - ng serve (optional port specification --prod)
