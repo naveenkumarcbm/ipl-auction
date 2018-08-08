@@ -37,5 +37,6 @@
 
 #    Installation:
         Using Angular CLI we can serve the application locally Using
+            - npm install (downloads node_modules packages)
             - ng serve (optional port specification --prod)
             - ng build --prod -aot (Production build)
