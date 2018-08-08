@@ -19,7 +19,7 @@ import { Component, OnInit, Input } from '@angular/core';
       <span>
         <label>{{player.name}}</label>
         <br>
-        <label> Rs. {{player.price | currency }}</label>
+        <label> Rs. {{player.price | currency:'':'' }}</label>
       </span>
     </div>
     <ul>
